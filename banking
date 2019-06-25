@@ -1,0 +1,226 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Bank{
+	private int accno,bal;
+    private String cname,addr;
+   
+    
+    public Bank(int accno, int bal, String cname, String addr) {
+		super();
+		this.accno = accno;
+		this.bal = bal;
+		this.cname = cname;
+		this.addr = addr;
+	}
+	public int getBal() {
+		return bal;
+	}
+	public void setBal(int bal) {
+		this.bal = bal;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public void setAccno(int accno) {
+		this.accno = accno;
+	}
+	public void getValue()
+    {
+            @SuppressWarnings("resource")
+			Scanner sin=new Scanner(System.in);
+            System.out.print("Enter the Customer name:");
+            cname=sin.nextLine();
+            System.out.print("Enter the Customer address: ");
+            addr=sin.nextLine();
+            System.out.print("Enter the accno:");
+            accno=sin.nextInt();
+            System.out.print("Enter the balance:");
+            bal=sin.nextInt();
+    }
+    public void displayData()
+    {
+
+            System.out.println("Accno:"+accno);
+            System.out.println("Customer name:"+cname);
+            System.out.println("Customer address:"+addr);
+            System.out.println("Balance amount:"+bal);
+  }
+    public void Deposit(int x)
+    
+    {
+            bal+=x;
+    }
+    public int getAccno()
+    {
+            return accno;
+    }
+    public void withDraw(int x)
+    {
+            if(bal>x)
+                    bal=bal-x;
+            else
+                    System.out.println("Ur balance is only "+bal);
+    	 //bal -=x;
+    	
+    }
+}
+public class User {
+    public static void main(String[] args) {
+    	 Bank b[] = null;
+    	 int n,accno,amt,ch = 0,ch1=0,i,temp=0;
+    	Scanner scanner = new Scanner(System.in);
+    	
+    	System.out.println("1.Adminlogin");
+        System.out.println("2.Clientlogin");
+        System.out.print("Enter ur choice:");
+        String input = scanner.nextLine();
+
+
+        while (input.equals("1")) {
+        	
+        	                System.out.println("username");
+       	                String str1 = scanner.nextLine();
+        	                System.out.println("Password");
+       	                String str2 = scanner.nextLine();
+        	                if(str1.equals("admin") && str2.equals("admin") ){
+        	                   //System.out.println("Credentials Accepted.");
+        	                   System.out.println("1.List of clients");
+                             System.out.println("2.Add client");
+                             System.out.println("3.Delete client");
+                             System.out.println("4.exit");
+                             System.out.print("Enter ur choice:");
+                             ch=scanner.nextInt();  
+                            
+                            switch(ch){
+                          case 1:
+                       	   
+                        	  break;
+                          case 2:
+                        	  String cname,addr;
+                        	  int bal,accno1;
+                       	Scanner sin=new Scanner(System.in);
+                        
+                       	//System.out.println("Enter the n value:");
+                         //n=sin.nextInt();
+                        // b=new Bank[n];
+                       // for( i=0;i<n;i++)
+                         //       b[i]=new Bank();
+                       // for( i=0;i<n;i++)
+//                       	Bank b1 = new Bank();
+//                                b1.getValue();
+                       	
+                       	Bank b1 = new Bank(12345,1000,"siva","sr nagar");
+                       	ArrayList<Bank>al = new ArrayList<Bank>();
+                         al.add(b1);
+                       	System.out.println(al);
+                        
+                              
+                              break;
+                          case 3:
+                       	   
+                        	  break;
+                          case 4:
+                           break;
+                          }
+                            temp=0;
+                            System.out.print("Do u want to continue (y-1)(n-0):");
+   	                     ch=scanner.nextInt();
+                           while(ch==1);
+        	                }else{
+        	                	System.out.println("Please try again.");
+        	                }
+                     
+        }
+    	
+        while (input.equals("2")) {
+        
+        	 System.out.println("username");
+                String str1 = scanner.nextLine();
+	                System.out.println("Password");
+                String str2 = scanner.nextLine();
+	                if(str1.equals("kumar") && str2.equals("gogam") ){
+	                	
+	                	 
+	                     System.out.println("1.Deposit");
+	                     System.out.println("2.WithDraw");
+	                     System.out.println("3.Display all data");
+	                     System.out.println("4.exit");
+	                     System.out.print("Enter ur choice:");
+	                     ch1 =scanner.nextInt();
+	                     
+//	                    b= new Bank[0];
+//	                    b[1]=new Bank();
+	                     switch(ch1)
+	                     {
+	                             case 1:
+	                            	 int x = 0,bal=0;
+	                                     System.out.print("Enter the accno:");
+	                                      accno=scanner.nextInt();
+	                                     System.out.print("Enter the amt:");
+	                                      amt=scanner.nextInt();
+//	                                     for( i=0;i<b.length;i++)
+//	                                     {
+//	                                             if(accno==b[i].getAccno())
+//	                                             {
+//	                                      Bank b2 = new Bank();
+//	                                      b2.Deposit(amt);
+//	                                      b2.displayData();
+	                                      
+	                                      bal+=x;
+	                                      temp=10;
+//	                                             }
+//	                                     }
+	                                     if(temp==0)
+	                                             System.out.println("Enter the correct accno");
+	                                     break;
+	                             case 2:
+	                                     System.out.print("Enter the accno:");
+	                                     accno=scanner.nextInt();
+	                                     System.out.print("Enter the amount to be withdraw:");
+	                                     amt=scanner.nextInt();
+//	                                     for( i=0;i<b.length;i++)
+//	                                     {
+//	                                             if(accno==b[i].getAccno())
+//	                                             {
+//	                                     Bank b3 = new Bank();
+//	                                                    b3.withDraw(amt);
+//	                                                    b3.displayData();
+	                                                     temp=10;
+//	                                             }
+//	                                     }
+	                                     if(temp==0)
+	                                             System.out.println("Enter the correct accno");
+	                                     break;
+	                             case 3:
+	                                     for( i=0;i<b.length;i++)
+	                                     b[i].displayData();
+	                                     break;
+	                             case 4:
+	                                     break;
+	                     }
+	                     temp=0;
+                         System.out.print("Do u want to continue (y-1)(n-0):");
+	                     ch1=scanner.nextInt();
+                        while(ch1==1);
+	                
+     	                }else{
+     	                	System.out.println("Please try again.");
+     	                }
+        
+
+
+    }
+    }
+}
+
